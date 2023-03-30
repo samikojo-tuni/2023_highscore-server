@@ -10,7 +10,15 @@ app.use(express.urlencoded({ extended: true }));
 
 // simple route
 app.get("/", (req, res) => {
-	res.json({ message: "Welcome to bezkoder application." });
+	res.json({
+		scores: [
+			{ name: "jaska", score: 20 },
+			{ name: "elli", score: 15 },
+			{ name: "juuso", score: 10 },
+			{ name: "saara", score: 5 },
+			{ name: "aino", score: 1 },
+		]
+	});
 });
 
 app.post("/", (req, res) => {
