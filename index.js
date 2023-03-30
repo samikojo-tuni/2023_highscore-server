@@ -1,4 +1,5 @@
 const express = require("express");
+const password = "RandomPassword_3e10";
 
 const app = express();
 
@@ -22,7 +23,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-	res.json({ message: "New score added succesfully!" });
+	if (req.body.pw == password) {
+		res.json({ message: `New score ${req.body.score} added for player ${req.body.name}!` });
+	} else {
+		res.status(401).send({ message: "Unauthorized!"	});
+	}
 });
 
 // set port, listen for requests
