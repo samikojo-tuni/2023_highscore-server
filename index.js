@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
 	res.json({
 		scores: [
-			{ player: { name: "jaska", score: 20 } },
-			{ player: { name: "elli", score: 15 } },
-			{ player: { name: "juuso", score: 10 } },
-			{ player: { name: "saara", score: 5 } },
-			{ player: { name: "aino", score: 1 } },
+			{ name: "jaska", score: 20 },
+			{ name: "elli", score: 15 },
+			{ name: "juuso", score: 10 },
+			{ name: "saara", score: 5 },
+			{ name: "aino", score: 1 },
 		]
 	});
 });
